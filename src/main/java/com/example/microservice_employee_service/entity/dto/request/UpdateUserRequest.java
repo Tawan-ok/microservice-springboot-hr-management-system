@@ -1,8 +1,6 @@
 package com.example.microservice_employee_service.entity.dto.request;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -10,13 +8,12 @@ import lombok.*;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class RegisterUserRequest {
+public class UpdateUserRequest {
     @NotBlank(message = "first name must not be null")
     private String firstName;
     @NotBlank(message = "last name must not null")
     private String lastName;
-    @NotNull(message = "age must not null")
-    @Min(value = 1, message = "Age must be at least 1")
+    @NotBlank(message = "age must not null")
     private int age;
     private int salary;
     private String location;
